@@ -18,6 +18,9 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 	int HP = 100;
 
+	UPROPERTY(BlueprintReadWrite)
+	float Hit = 0;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
