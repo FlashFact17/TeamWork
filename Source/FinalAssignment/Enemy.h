@@ -21,6 +21,12 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 	float Hit = 0;
 
+	UFUNCTION(BlueprintCallable)
+	void OnDamage(int damage);
+
+	UFUNCTION(BlueprintCallable)
+	void OnHit();
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
