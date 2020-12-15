@@ -11,20 +11,6 @@ AEnemy::AEnemy()
 
 }
 
-void AEnemy::OnDamage(int damage)
-{
-	HP -= damage;
-	if (HP <= 0)
-	{
-		HP = 0;
-	}
-}
-
-void AEnemy::OnHit()
-{
-	Hit = 1;
-}
-
 // Called when the game starts or when spawned
 void AEnemy::BeginPlay()
 {

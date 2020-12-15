@@ -97,23 +97,3 @@ void AFinalAssignmentCharacter::ShootProjectile()
 {
 	GetWorld()->SpawnActor<AActor>(ProjectileActor, ProjectileOrigin->GetComponentTransform());
 }
-
-void AFinalAssignmentCharacter::OnDamage(int damage)
-{
-	HP -= damage;
-	if (HP <= 0)
-	{
-		HP = 0;
-	}
-}
-
-void AFinalAssignmentCharacter::OnManaCost(int cost)
-{
-	Mana -= cost;
-	if (Mana <= 0)
-	{
-		Mana = 0;
-	}
-}
-
-

@@ -38,12 +38,6 @@ public:
 
 	void ShootProjectile();
 
-	UFUNCTION(BlueprintCallable)
-	void OnDamage(int damage);
-
-	UFUNCTION(BlueprintCallable)
-	void OnManaCost(int cost);
-
 private:
 	/** Top down camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
