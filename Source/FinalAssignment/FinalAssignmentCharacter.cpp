@@ -11,6 +11,7 @@
 #include "HeadMountedDisplayFunctionLibrary.h"
 #include "Materials/Material.h"
 #include "Engine/World.h"
+#include "Kismet/KismetSystemLibrary.h"
 
 AFinalAssignmentCharacter::AFinalAssignmentCharacter()
 {
@@ -114,6 +115,19 @@ void AFinalAssignmentCharacter::OnManaCost(int cost)
 	{
 		Mana = 0;
 	}
+}
+
+void AFinalAssignmentCharacter::Boom()
+{
+	TArray<TEnumAsByte<EObjectTypeQuery>> objectTypes;
+	objectTypes.Add(UEngineTypes::ConvertToObjectType(ECollisionChannel::ECC_Pawn));
+	FVector charLocation = GetActorLocation();
+	float radius = 300.0f;
+	TArray<ACharacter*> enemyIgnore;
+	TArray<ACharacter*> enemyInSphere;
+	//UClass* enemies = A::AEnemy();
+	//UKismetSystemLibrary::SphereOverlapActors(GetWorld(), charLocation, radius);
+	
 }
 
 
