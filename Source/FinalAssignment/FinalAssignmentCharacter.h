@@ -36,18 +36,6 @@ public:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<AActor> ProjectileActor;
 
-	UPROPERTY(BlueprintReadWrite)
-	bool bIsInvincible;
-
-	//UPROPERTY(VisibleAnywhere)
-	//class USphereCompenent* overlapSphere;
-
-	UFUNCTION(BlueprintCallable)
-	void OnDodge();
-
-	UFUNCTION(BlueprintCallable)
-	void HasDodged();
-
 	void ShootProjectile();
 
 	UFUNCTION(BlueprintCallable)
@@ -55,13 +43,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void OnManaCost(int cost);
-	
+
 	UFUNCTION(BlueprintCallable)
-	void AOESpell();
-
-
-	//UFUNCTION(BlueprintCallable)
-	//void Boom();
+	void Boom();
 
 private:
 	/** Top down camera */

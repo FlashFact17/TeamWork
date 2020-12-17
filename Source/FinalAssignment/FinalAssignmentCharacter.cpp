@@ -12,8 +12,6 @@
 #include "Materials/Material.h"
 #include "Engine/World.h"
 #include "Kismet/KismetSystemLibrary.h"
-#include "Enemy.h"
-#include "Components/SphereComponent.h"
 
 AFinalAssignmentCharacter::AFinalAssignmentCharacter()
 {
@@ -62,7 +60,6 @@ AFinalAssignmentCharacter::AFinalAssignmentCharacter()
 	ProjectileOrigin = CreateDefaultSubobject<USceneComponent>(TEXT("ProjectileOrigin"));
 	ProjectileOrigin->SetupAttachment(RootComponent);
 
-
 }
 
 void AFinalAssignmentCharacter::Tick(float DeltaSeconds)
@@ -97,17 +94,6 @@ void AFinalAssignmentCharacter::Tick(float DeltaSeconds)
 	}
 }
 
-void AFinalAssignmentCharacter::OnDodge()
-{
-	//AFinalAssignmentCharacter* MyCharacter = Cast<AFinalAssignmentCharacter>();
-	bIsInvincible = true;
-}
-
-void AFinalAssignmentCharacter::HasDodged()
-{
-	bIsInvincible = false;
-}
-
 void AFinalAssignmentCharacter::ShootProjectile()
 {
 	GetWorld()->SpawnActor<AActor>(ProjectileActor, ProjectileOrigin->GetComponentTransform());
@@ -115,10 +101,7 @@ void AFinalAssignmentCharacter::ShootProjectile()
 
 void AFinalAssignmentCharacter::OnDamage(int damage)
 {
-	if (!bIsInvincible)
-	{
-		HP -= damage;
-	}
+	HP -= damage;
 	if (HP <= 0)
 	{
 		HP = 0;
@@ -134,29 +117,17 @@ void AFinalAssignmentCharacter::OnManaCost(int cost)
 	}
 }
 
-void AFinalAssignmentCharacter::AOESpell()
+void AFinalAssignmentCharacter::Boom()
 {
-	//float radius = 300.0f;
-
-	//overlapSphere = CreateDefaultSubobject<USphereCompenent>(TEXT("Sphere Collision"));
-	//overlapSphere->InitSphereRadius(radius);
-
-}
-
-
-//void AFinalAssignmentCharacter::Boom()
-//{
-	//TArray<TEnumAsByte<EObjectTypeQuery>> objectTypes;
-	//objectTypes.Add(UEngineTypes::ConvertToObjectType(ECollisionChannel::ECC_Pawn));
-	//FVector charLocation = GetActorLocation();
-	//float radius = 300.0f;
-	//TArray<ACharacter*> enemyIgnore;
-	//TArray<ACharacter*> enemyInSphere;
+	TArray<TEnumAsByte<EObjectTypeQuery>> objectTypes;
+	objectTypes.Add(UEngineTypes::ConvertToObjectType(ECollisionChannel::ECC_Pawn));
+	FVector charLocation = GetActorLocation();
+	float radius = 300.0f;
+	TArray<ACharacter*> enemyIgnore;
+	TArray<ACharacter*> enemyInSphere;
 	//UClass* enemies = A::AEnemy();
 	//UKismetSystemLibrary::SphereOverlapActors(GetWorld(), charLocation, radius);
 	
-//}
-
-
+}
 
 
