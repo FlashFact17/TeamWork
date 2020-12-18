@@ -56,6 +56,15 @@ public:
 
 	void ShootProjectile();
 
+	UPROPERTY(BlueprintReadWrite)
+		bool bIsInvincible;
+
+	UFUNCTION(BlueprintCallable)
+	void OnDodge();
+
+	UFUNCTION(BlueprintCallable)
+	void HasDodged();
+
 	UFUNCTION(BlueprintCallable)
 	void OnDamage(int damage);
 

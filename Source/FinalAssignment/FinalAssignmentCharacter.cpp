@@ -100,9 +100,22 @@ void AFinalAssignmentCharacter::ShootProjectile()
 	GetWorld()->SpawnActor<AActor>(ProjectileActor, ProjectileOrigin->GetComponentTransform());
 }
 
+void AFinalAssignmentCharacter::OnDodge()
+{
+	bIsInvincible = true;
+}
+
+void AFinalAssignmentCharacter::HasDodged()
+{
+	bIsInvincible = false;
+}
+
 void AFinalAssignmentCharacter::OnDamage(int damage)
 {
-	HP -= damage;
+	if (!bIsInvincible)
+	{
+		HP -= damage;
+	}
 	if (HP <= 0)
 	{
 		HP = 0;
