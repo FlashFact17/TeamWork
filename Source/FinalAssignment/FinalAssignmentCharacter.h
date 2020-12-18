@@ -30,6 +30,24 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 		int Mana = 100;
 
+	UPROPERTY(BlueprintReadWrite)
+		int MaxHPpot = 3;
+
+	UPROPERTY(BlueprintReadWrite)
+		int CurHPpot = 3;
+
+	UPROPERTY(BlueprintReadWrite)
+		int MaxManaPot = 3;
+
+	UPROPERTY(BlueprintReadWrite)
+		int CurManaPot = 3;
+
+	UPROPERTY(BlueprintReadWrite)
+		int MaxSpeedPot = 3;
+
+	UPROPERTY(BlueprintReadWrite)
+		int CurSpeedPot = 3;
+
 	UPROPERTY(VisibleAnywhere)
 	USceneComponent* ProjectileOrigin;
 
@@ -43,6 +61,15 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void OnManaCost(int cost);
+
+	UFUNCTION(BlueprintCallable)
+	void UseHpPot();
+
+	UFUNCTION(BlueprintCallable)
+	void UseManaPot();
+
+	UFUNCTION(BlueprintCallable)
+	void UseSpeedPot();
 
 	UFUNCTION(BlueprintCallable)
 	void Boom();

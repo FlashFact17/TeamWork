@@ -3,6 +3,7 @@
 #include "FinalAssignmentCharacter.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Camera/CameraComponent.h"
+#include "Components/InputComponent.h"
 #include "Components/DecalComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
@@ -116,6 +117,41 @@ void AFinalAssignmentCharacter::OnManaCost(int cost)
 		Mana = 0;
 	}
 }
+
+void AFinalAssignmentCharacter::UseHpPot()
+{
+	if (CurHPpot > 0)
+	{
+		CurHPpot -= 1;
+		HP += 25;
+		if (HP >= 100)
+		{
+			HP = 100;
+		}
+	}
+}
+
+void AFinalAssignmentCharacter::UseManaPot()
+{
+	if (CurManaPot > 0)
+	{
+		CurManaPot -= 1;
+		Mana += 25;
+		if (Mana >= 100)
+		{
+			Mana = 100;
+		}
+	}
+}
+
+void AFinalAssignmentCharacter::UseSpeedPot()
+{
+	if (CurSpeedPot > 0)
+	{
+		
+	}
+}
+
 
 void AFinalAssignmentCharacter::Boom()
 {
