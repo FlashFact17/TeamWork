@@ -37,7 +37,8 @@ void AFinalAssignmentPlayerController::SetupInputComponent()
 	InputComponent->BindTouch(EInputEvent::IE_Repeat, this, &AFinalAssignmentPlayerController::MoveToTouchLocation);
 
 	InputComponent->BindAction("ResetVR", IE_Pressed, this, &AFinalAssignmentPlayerController::OnResetVR);
-	InputComponent->BindAction("Shoot", IE_Pressed, this, &AFinalAssignmentPlayerController::OnShoot);
+	//InputComponent->BindAction("Shoot", IE_Pressed, this, &AFinalAssignmentPlayerController::OnShoot);
+	// Would override blueprint InputAction shoot
 }
 
 void AFinalAssignmentPlayerController::OnResetVR()

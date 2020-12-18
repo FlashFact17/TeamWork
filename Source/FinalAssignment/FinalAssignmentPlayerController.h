@@ -39,6 +39,7 @@ protected:
 	void OnSetDestinationPressed();
 	void OnSetDestinationReleased();
 
+	UFUNCTION(BlueprintCallable)
 	void OnShoot();
 };
 

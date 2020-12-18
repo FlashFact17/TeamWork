@@ -15,27 +15,14 @@ ATrap::ATrap()
 	Mesh->SetupAttachment(RootComponent);
 
 
-	//BPEnemy = CreateDefaultSubobject<ACharacter>(TEXT("BPEnemy"));
-	//BPEnemy->SetupAttachment(RootComponent);
-
-
 }
 
 void ATrap::SpawnEnemy()
 {
-	UWorld* world = GetWorld();
 	FVector const location = GetActorLocation();
 	FRotator const rotation (0.0f, 0.0f, 0.0f);
-	//FActorSpawnParameters param;
-	//param.Owner = this;
-	//GetWorld()->SpawnActor<>()
-	//AEnemy* Enemy = 
 	GetWorld()->SpawnActor<AEnemy>(BPEnemy, location, rotation);
-	if (BPEnemy) {
-		//GetWorld()->SpawnActor<ACharacter>(BPEnemy, location, rotation, param);
-		//SpawnActor<ACharacter>(BPEnemy, location, rotation, param);
-	}
-	//world->SpawnActor<BP_Enemy>(BPEnemy, location, rotation, param);
+
 }
 
 // Called when the game starts or when spawned
