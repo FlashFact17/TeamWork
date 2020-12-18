@@ -72,6 +72,15 @@ public:
 	void UseSpeedPot();
 
 	UFUNCTION(BlueprintCallable)
+	void PickHpPot();
+
+	UFUNCTION(BlueprintCallable)
+	void PickManaPot();
+
+	UFUNCTION(BlueprintCallable)
+	void PickSpeedPot();
+
+	UFUNCTION(BlueprintCallable)
 	void Boom();
 
 private:

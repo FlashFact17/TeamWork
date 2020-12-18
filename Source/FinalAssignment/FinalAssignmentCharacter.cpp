@@ -148,7 +148,31 @@ void AFinalAssignmentCharacter::UseSpeedPot()
 {
 	if (CurSpeedPot > 0)
 	{
-		
+		CurSpeedPot -= 1;
+	}
+}
+
+void AFinalAssignmentCharacter::PickHpPot()
+{
+	if (CurHPpot < 3)
+	{
+		CurHPpot += 1;
+	}
+}
+
+void AFinalAssignmentCharacter::PickManaPot()
+{
+	if (CurManaPot < 3)
+	{
+		CurManaPot += 1;
+	}
+}
+
+void AFinalAssignmentCharacter::PickSpeedPot()
+{
+	if (CurSpeedPot < 3)
+	{
+		CurSpeedPot += 1;
 	}
 }
 
